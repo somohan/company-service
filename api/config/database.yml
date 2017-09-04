@@ -1,0 +1,6 @@
+development:
+  adapter: <%= ENV['DB_ADAPTER'] %>
+  database: <%= ENV['DB_DB_NAME'] %>
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASS'] %>
+  host: <%= ENV['DB_HOST'] %>

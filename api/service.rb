@@ -76,7 +76,7 @@ post '/company' do
   company.countryCode = data['countryCode']
   company.phoneNumber = data['phoneNumber']
   company.save
-  json 'message' => 'Company was created', 'id' => company.__id__
+  json 'message' => 'Company was created', 'id' => company.id
 end
 
 put '/company/:id' do

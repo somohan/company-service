@@ -22,11 +22,13 @@ services:
       ports:
         - 4567:4567
       environment:
+        - "DATABASE_URL=postgres://company_service:pass@db:5432/company_service"
         - "DB_ADAPTER=postgresql"
         - "DB_HOST=db"
         - "DB_USER=company_service"
         - "DB_PASS=pass"
         - "DB_DB_NAME=company_service"
+        - "RACK_ENV=production"
       volumes:
         - ./api/:/usr/src/app
 
@@ -35,7 +37,8 @@ services:
       ports:
         - 80:80
       environment:
-        - "API_ENDPOINT=api:4567"
+        - "API_ENDPOINT=http://localhost:4567/"
         - "NODE_ENV=production"
+        - "PORT=80"
       volumes:
-        - ./ui/:/usr/src/app:ro
+        - ./ui/:/usr/src/app

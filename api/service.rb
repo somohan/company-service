@@ -7,11 +7,15 @@ require './config/environments'
 require './models/company'
 
 get '/company' do
+  response.headers['Access-Control-Allow-Origin'] = '*'
+  response.headers['Access-Control-Allow-Methods'] = 'GET'
   @companies = Company.all
   json @companies
 end
 
 get '/company/:id' do
+  response.headers['Access-Control-Allow-Origin'] = '*'
+  response.headers['Access-Control-Allow-Methods'] = 'GET'
   begin
     @company = Company.find(params['id'])
     json @company
@@ -22,6 +26,8 @@ get '/company/:id' do
 end
 
 post '/company' do
+  response.headers['Access-Control-Allow-Origin'] = '*'
+  response.headers['Access-Control-Allow-Methods'] = 'POST'
   required_fields = %w(name cvr address city countryCode)
   required_fields.each {|field|
     unless params[field]

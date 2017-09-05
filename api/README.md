@@ -27,3 +27,6 @@ rake db:migrate
 ```
 ruby service.rb
 ```
+...or while developing `rerun ruby service.rb`. 
+**rerun** needs to be installed first though. 
+On Ubuntu this is done by running `sudo apt install rerun`.

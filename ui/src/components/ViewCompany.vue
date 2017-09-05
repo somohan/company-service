@@ -40,7 +40,7 @@
     async created () {
       try {
         let id = router.currentRoute.params.companyId
-        const endpoint = process.env.API_ENDPOINT || 'http://localhost:4567/'
+        const endpoint = process.env.API_ENDPOINT
         const response = await axios.get(endpoint + 'company/' + id)
         this.company = response.data
       } catch (e) {

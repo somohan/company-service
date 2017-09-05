@@ -86,7 +86,7 @@
           return
         }
         try {
-          const endpoint = process.env.API_ENDPOINT || 'http://localhost:4567/'
+          const endpoint = process.env.API_ENDPOINT
           const response = await axios.post(endpoint + 'company', {
             name: this.name,
             cvr: this.cvr,

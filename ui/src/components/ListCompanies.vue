@@ -40,7 +40,7 @@
     }),
     async created () {
       try {
-        const endpoint = process.env.API_ENDPOINT || 'http://localhost:4567/'
+        const endpoint = process.env.API_ENDPOINT
         const response = await axios.get(endpoint + 'company')
         for (var value of response.data) {
           value.url = '/#/view/' + value.id

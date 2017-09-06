@@ -3,9 +3,14 @@
 ## Getting started
 You can run the service using Docker: 
 
-```
+``` bash
+# Build the image
 docker-compose up -d --build
+# Run install dependencies. This is also done in the Docker 
+# build process. However, we need to run it with the volume mapped,
+# if we are in development mode
 docker-compose run --rm api bundle install
+# Apply any DB migrations (init the DB schema)
 docker-compose run --rm api rake db:migrate
 ```
 
